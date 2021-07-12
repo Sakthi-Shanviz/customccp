@@ -7,7 +7,6 @@ import axios from 'axios';
 import { setInstanceConfig, setAPIConfig, makeAppReady, setAttributeTracing } from './redux/action/metadata';
 
 import Layout from './pages/layout/layout';
-import ExternalLayout from './pages/external/external';
 import { Route, Switch } from 'react-router';
 import { HashRouter as Router } from 'react-router-dom';
 class App extends Component{
@@ -53,9 +52,6 @@ class App extends Component{
                         this.state.appReady && 
                         <Router>
                             <Switch>
-                                <Route path="/external">
-                                    <ExternalLayout />
-                                </Route>
                                 <Route path="/app">
                                     <Layout />
                                 </Route>

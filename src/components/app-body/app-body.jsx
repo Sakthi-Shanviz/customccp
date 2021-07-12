@@ -26,13 +26,9 @@ class AppBody extends Component {
                 <TableBody>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Caller ID</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} align="right">
-                      <TextField className={styles.TextField} id="caller-id" variant="outlined" size="small" margin="dense" />
-                    </StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField} id="caller-id" variant="outlined" size="small" /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} align="right">DNIS</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} align="right">
-                      <TextField className={styles.TextField} id="dnis" variant="outlined" size="small" margin="dense" />
-                    </StyledTableCell>            
+                    <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField} id="dnis" variant="outlined" size="small" /></StyledTableCell>            
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>ANI</StyledTableCell>
@@ -62,7 +58,7 @@ class AppBody extends Component {
                   </TableRow>
                   <TableRow>
                   <StyledTableCell className={styles.tableCell}>Short Message</StyledTableCell>
-                  <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField} id="shortmessage" variant="outlined" size="small" /></StyledTableCell>
+                  <StyledTableCell className={styles.TextField} align="right"><TextField className={styles.TextField} id="shortmessage" variant="outlined" size="small" /></StyledTableCell>
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Provider ID</StyledTableCell>

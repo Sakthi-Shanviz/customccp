@@ -26,15 +26,19 @@ class AppBody extends Component {
                 <TableBody>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Caller ID</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField} id="caller-id" label="Caller ID" variant="outlined" size="small" margin="dense" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} align="right">
+                      <TextField className={styles.TextField} id="caller-id" variant="outlined" size="small" margin="dense" />
+                    </StyledTableCell>
                     <StyledTableCell className={styles.tableCell} align="right">DNIS</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField} id="dnis" label="DNIS" variant="outlined" size="small" margin="dense" /></StyledTableCell>            
+                    <StyledTableCell className={styles.tableCell} align="right">
+                      <TextField className={styles.TextField} id="dnis" variant="outlined" size="small" margin="dense" />
+                    </StyledTableCell>            
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>ANI</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField}  id="ani" label="ANI" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField}  id="ani" variant="outlined" size="small" /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} align="right">Callback Memo</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField} id="callback memo" label="Callback Memo" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} align="right"><TextField className={styles.TextField} id="callback memo" variant="outlined" size="small" /></StyledTableCell>
                   </TableRow>
                 </TableBody>
               </Table>

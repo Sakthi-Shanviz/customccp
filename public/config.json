@@ -1,0 +1,13 @@
+{
+    "api": {
+        "endpoint": "https://u8w8us2h2c.execute-api.us-west-2.amazonaws.com",
+        "basepath": "/dev"
+    },
+    "connect": {
+        "instance": {
+            "id": "0a9f9372-54f8-478b-8ba1-bad3f5a8c40e",
+            "name": "pega-custom-ccp"
+        }
+    },
+    "attributeTracing": ["myContactCenter", "settingQueue", "toTechQueue"]
+}

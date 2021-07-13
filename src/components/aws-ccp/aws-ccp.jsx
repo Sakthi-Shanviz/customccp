@@ -91,14 +91,20 @@ class AWSCCPComponent extends Component {
                 console.log("Contact connecting");
                 console.log(`onConnected(${contact.getContactId()})`);
                 var attributeMap = contact.getAttributes();
-                var caller_id = JSON.stringify(attributeMap["caller_id"]["value"]);
-                var ani = JSON.stringify(attributeMap["ani"]["value"]);                
-                console.log(caller_id);
-                console.log(ani);
-                console.log(attributeMap);                
-               
-                console.log(contact)
-                
+                const requireAttributes = ["callerId", "ani", "beneficiaryId", "dnis", "callbackMemo", "hippaVerification"];
+                const data = Object.values(attributeMap)
+                    .filter((attr) => requireAttributes.indexOf(attr.name) != -1)
+                    .reduce((attributes, currentMap) => {
+                        attributes[currentMap.name] = currentMap.value;
+                        return attributes;
+                    }, {});
+
+                console.log(data);
+                const query = new URLSearchParams();
+                Object.entries(data).forEach(([name, value]) => {
+                    query.append(name, value);
+                });
+                window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");
              });
             
             //  _contact.onAccepted(function(contact) { 
@@ -232,10 +238,7 @@ class AWSCCPComponent extends Component {
 
     componentDidMount() {
         this.initializeCCP();
-        const query = new URLSearchParams();
-        query.append("callerId", "caller_id");
-        query.append("ani","ani");
-        window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");
+        
         
     }
 

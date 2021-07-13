@@ -43,15 +43,15 @@ class AppBody extends Component {
                 <TableBody>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Caller ID</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField value={this.state.data.caller_id} fullWidth className={styles.TextField} id="caller-id" variant="outlined" size="small" disabled={true} /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField value={this.state.data.callerId} fullWidth className={styles.TextField} id="caller-id" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} >DNIS</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="dnis" variant="outlined" size="small" disabled={true} /></StyledTableCell>            
+                    <StyledTableCell className={styles.tableCell} ><TextField value={this.state.data.dnis} fullWidth className={styles.TextField} id="dnis" variant="outlined" size="small" disabled={true} /></StyledTableCell>            
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>ANI</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField value={this.state.data.ani} fullWidth className={styles.TextField}  id="ani" variant="outlined" size="small" disabled={true} /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField value={this.state.data.ani} value={this.state.data.ani} fullWidth className={styles.TextField}  id="ani" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} >Callback Memo</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="callback memo" variant="outlined" size="small" disabled={true} /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField value={this.state.data.callbackMemo} fullWidth className={styles.TextField} id="callback memo" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                 </TableBody>
               </Table>

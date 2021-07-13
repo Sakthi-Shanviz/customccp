@@ -23,15 +23,15 @@ class AppBody extends Component {
                 <TableBody>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Caller ID</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="caller-id" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="caller-id" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} >DNIS</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="dnis" variant="outlined" size="small" /></StyledTableCell>            
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="dnis" variant="outlined" size="small" disabled={true} /></StyledTableCell>            
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>ANI</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="ani" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="ani" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} >Callback Memo</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="callback memo" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="callback memo" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                 </TableBody>
               </Table>
@@ -42,46 +42,46 @@ class AppBody extends Component {
                 <TableHead>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Service Name</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell}  colSpan="3"><TextField fullWidth className={styles.TextField} id="service name" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell}  colSpan="3"><TextField fullWidth className={styles.TextField} id="service name" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>HIPAA Verification</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="hipaaverification" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="hipaaverification" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} width="140px">Beneficiary ID</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="beneficiaryid" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="beneficiaryid" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>First Name</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="firstname" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="firstname" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} >Last Name</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="lastname" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="lastname" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                   <TableRow>
                     <StyledTableCell colSpan="2" />
                     <StyledTableCell className={styles.tableCell} >DOB</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="dob" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="dob" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Short Message</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="shortmessage" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="shortmessage" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Provider ID</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="providerid" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="providerid" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} >IVR Transaction Number</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="ivrtransactionnumber" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="ivrtransactionnumber" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Caller Type</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="callertype" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField}  id="callertype" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} >Caller Intent</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="callerintent" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="callerintent" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                   </TableRow>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Bene Plan Code</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="beneplancode" variant="outlined" size="small" /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="beneplancode" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell colSpan="2"></StyledTableCell>
                   </TableRow>
                 </TableBody>

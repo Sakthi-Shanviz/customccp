@@ -64,10 +64,10 @@ class AWSCCPComponent extends Component {
         let ele = this.containerRef.current;
         global.connect.core.initCCP(ele, this.ccpConfig);
         
-        global.connect.contact((contact) => {
+      /*  global.connect.contact((contact) => {
             console.log("Contact event");
             console.log(contact);
-        })
+        }) */
 
         global.connect.contact((_contact) => {
             console.log("Contact event");
@@ -90,6 +90,7 @@ class AWSCCPComponent extends Component {
             
              _contact.onConnecting(function(contact) { 
                 console.log("Contact connecting");
+                
                 console.log(contact)
              });
             
@@ -119,13 +120,18 @@ class AWSCCPComponent extends Component {
              });
             
              _contact.onConnected(function(contact) { 
-                console.log("Contact connected");
-                console.log(contact)
+                console.log(`onConnected(${contact.getContactId()})`);
+                var attributeMap = contact.getAttributes();
+                var caller_id = JSON.stringify(attributeMap["caller_id"]["value"]);
+                var ani = JSON.stringify(attributeMap["ani"]["value"]);                
+                console.log(caller_id);
+                console.log(ani);
+                window.alert("Caller ID: " + caller_id + "\nani: " + ani);
              });
 
         })
 
-        global.connect.contact((_agent) => {
+        global.connect.agent((_agent) => {
             console.log("agent event");
             console.log(_agent);
             
@@ -172,7 +178,7 @@ class AWSCCPComponent extends Component {
         })
 
         global.connect.agent(this.handleAgentLogin);
-        global.connect.contact(this.handleContact);
+        //global.connect.contact(this.handleContact);
         const eventBus = global.connect.core.getEventBus();
         eventBus.subscribe(global.connect.EventType.TERMINATED, this.handleTermination);
     }

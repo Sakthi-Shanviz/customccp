@@ -18,7 +18,7 @@ class Layout extends Component {
                         <AWSCCPComponent />
                     </div>
                     <div className={styles.routerContainer}>                    
-                        <AppBody/>
+                        {/* <AppBody/> */}
                     </div>
                 </div>
                 <AppFooter />

@@ -5,6 +5,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import store from './redux/store';
 import axios from 'axios';
 import { setInstanceConfig, setAPIConfig, makeAppReady, setAttributeTracing } from './redux/action/metadata';
+import AppBody from "./components/app-body/app-body";
 
 import Layout from './pages/layout/layout';
 import { Route, Switch } from 'react-router';
@@ -53,6 +54,9 @@ class App extends Component{
                             <Switch>
                                 <Route path="/app">
                                     <Layout />
+                                </Route>
+                                <Route path="/view">
+                                    <AppBody />
                                 </Route>
                             </Switch>
                         </Router>

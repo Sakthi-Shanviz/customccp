@@ -70,112 +70,119 @@ class AWSCCPComponent extends Component {
         }) */
 
         global.connect.contact((_contact) => {
-            console.log("Contact event");
-            console.log(_contact);
+            // console.log("Contact event");
+            // console.log(_contact);
 
-            _contact.onRefresh(function(contact) { 
-                console.log("Contact refreshed");
-                console.log(contact)
-             });
+            // _contact.onRefresh(function(contact) { 
+            //     console.log("Contact refreshed");
+            //     console.log(contact)
+            //  });
             
-             _contact.onIncoming(function(contact) { 
-                console.log("Contact incoming");
-                console.log(contact)
-             });
+            //  _contact.onIncoming(function(contact) { 
+            //     console.log("Contact incoming");
+            //     console.log(contact)
+            //  });
             
-             _contact.onPending(function(contact) { 
-                console.log("Contact pending");
-                console.log(contact)
-             });
+            //  _contact.onPending(function(contact) { 
+            //     console.log("Contact pending");
+            //  });
             
              _contact.onConnecting(function(contact) { 
                 console.log("Contact connecting");
-                
-                console.log(contact)
-             });
-            
-             _contact.onAccepted(function(contact) { 
-                console.log("Contact accepted");
-                console.log(contact)
-             });
-            
-             _contact.onMissed(function(contact) { 
-                console.log("Contact missed");
-                console.log(contact)
-             });
-            
-             _contact.onEnded(function(contact) { 
-                console.log("Contact ended");
-                console.log(contact)
-             });
-            
-             _contact.onDestroy(function(contact) { 
-                console.log("Contact destroyed");
-                console.log(contact)
-             });
-            
-             _contact.onACW(function(contact) { 
-                console.log("Contact ACWW");
-                console.log(contact)
-             });
-            
-             _contact.onConnected(function(contact) { 
                 console.log(`onConnected(${contact.getContactId()})`);
                 var attributeMap = contact.getAttributes();
                 var caller_id = JSON.stringify(attributeMap["caller_id"]["value"]);
                 var ani = JSON.stringify(attributeMap["ani"]["value"]);                
                 console.log(caller_id);
                 console.log(ani);
-                window.alert("Caller ID: " + caller_id + "\nani: " + ani);
+                // window.alert("Caller ID: " + caller_id + "\nani: " + ani);
+                console.log(contact)
+                
              });
+            
+            //  _contact.onAccepted(function(contact) { 
+            //     console.log("Contact accepted");
+            //     console.log(contact)
+            //  });
+            
+            //  _contact.onMissed(function(contact) { 
+            //     console.log("Contact missed");
+            //     console.log(contact)
+            //  });
+            
+            //  _contact.onEnded(function(contact) { 
+            //     console.log("Contact ended");
+            //     console.log(contact)
+            //  });
+            
+            //  _contact.onDestroy(function(contact) { 
+            //     console.log("Contact destroyed");
+            //     console.log(contact)
+            //  });
+            
+            //  _contact.onACW(function(contact) { 
+            //     console.log("Contact ACWW");
+            //     console.log(contact)
+            //  });
+            
+            //  _contact.onConnected(function(contact) { 
+            //     console.log("on connected")
+            //     // console.log(`onConnected(${contact.getContactId()})`);
+            //     // var attributeMap = contact.getAttributes();
+            //     // var caller_id = JSON.stringify(attributeMap["caller_id"]["value"]);
+            //     // var ani = JSON.stringify(attributeMap["ani"]["value"]);                
+            //     // console.log(caller_id);
+            //     // console.log(ani);
+            //     // window.alert("Caller ID: " + caller_id + "\nani: " + ani);
+            //  });
 
         })
 
-        global.connect.agent((_agent) => {
-            console.log("agent event");
-            console.log(_agent);
+        // global.connect.agent((_agent) => {
+        //     console.log("agent event");
+        //     console.log(_agent);
             
-            _agent.onContactPending(function(agent) { 
-                console.log("agent contact pending");
-                console.log(agent);
-             });
+        //     _agent.onContactPending(function(agent) { 
+        //         console.log("agent contact pending");
+        //         console.log(agent);
+        //      });
             
-            _agent.onRefresh(function(agent) { 
-                console.log("agent refresh");
-                console.log(agent);
-             });
+        //     _agent.onRefresh(function(agent) { 
+        //         console.log("agent refresh");
+        //         console.log(agent);
+        //      });
             
-            _agent.onStateChange(function(agentStateChange) { 
-                console.log("agent state change");
-                console.log(agentStateChange);
-             });
+        //     _agent.onStateChange(function(agentStateChange) { 
+        //         console.log("agent state change");
+        //         console.log(agentStateChange);
+        //      });
             
-            _agent.onRoutable(function(agent) { 
-                console.log("agent routable");
-                console.log(agent);
-             });
+        //     _agent.onRoutable(function(agent) { 
+        //         console.log("agent routable");
+        //         console.log(agent);
+        //      });
             
-            _agent.onNotRoutable(function(agent) { 
-                console.log("agent non routable");
-                console.log(agent);
-             });
+        //     _agent.onNotRoutable(function(agent) { 
+        //         console.log("agent non routable");
+        //         console.log(agent);
+        //      });
             
-            _agent.onOffline(function(agent) { 
-                console.log("agent offline");
-                console.log(agent);
-             });
+        //     _agent.onOffline(function(agent) { 
+        //         console.log("agent offline");
+        //         console.log(agent);
+        //      });
             
-            _agent.onError(function(agent) { 
-                console.log("agent error");
-                console.log(agent);
-             });
+        //     _agent.onError(function(agent) { 
+        //         console.log("agent error");
+        //         console.log(agent);
+        //      });
             
-            _agent.onAfterCallWork(function(agent) { 
-                console.log("agent on ACW");
-                console.log(agent);
-             });
+        //     _agent.onAfterCallWork(function(agent) { 
+        //         console.log("agent on ACW");
+        //         console.log(agent);
+        //      });
 
-        })
+        // })
 
         global.connect.agent(this.handleAgentLogin);
         //global.connect.contact(this.handleContact);
@@ -224,6 +231,11 @@ class AWSCCPComponent extends Component {
 
     componentDidMount() {
         this.initializeCCP();
+        const query = new URLSearchParams();
+        query.append("callerId", "caller_id");
+        query.append("ani", "ani");
+        window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=840,height=520,left=50,top=50");
+        
     }
 
     render() {

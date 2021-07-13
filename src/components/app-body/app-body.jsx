@@ -5,6 +5,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import styles from './app-body.module.sass';
+import queryString  from "query-string";
 
 import StyledTableCell from "../styled-components/table-cell";
 
@@ -14,7 +15,26 @@ const useStyles = makeStyles({
     },
   });
 
-class AppBody extends Component {    
+class AppBody extends Component {
+  
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        data: {}
+      };
+    }
+
+    componentDidMount() {
+      const hash = window.location.hash;
+      const params = hash.substring(hash.indexOf("?") +1);
+      if(Object.keys(params).length > 0) {
+        this.setState({
+          data: queryString.parse(params)
+        })
+      }
+
+    }  
 
     render() {
         return(
@@ -23,7 +43,7 @@ class AppBody extends Component {
                 <TableBody>
                   <TableRow>
                     <StyledTableCell className={styles.tableCell}>Caller ID</StyledTableCell>
-                    <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="caller-id" variant="outlined" size="small" disabled={true} /></StyledTableCell>
+                    <StyledTableCell className={styles.tableCell} ><TextField value={this.state.data.ani} fullWidth className={styles.TextField} id="caller-id" variant="outlined" size="small" disabled={true} /></StyledTableCell>
                     <StyledTableCell className={styles.tableCell} >DNIS</StyledTableCell>
                     <StyledTableCell className={styles.tableCell} ><TextField fullWidth className={styles.TextField} id="dnis" variant="outlined" size="small" disabled={true} /></StyledTableCell>            
                   </TableRow>

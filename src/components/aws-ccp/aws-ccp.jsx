@@ -104,7 +104,7 @@ class AWSCCPComponent extends Component {
                 Object.entries(data).forEach(([name, value]) => {
                     query.append(name, value);
                 });
-                window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");
+                var openedWindow = window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");                
              });
             
             //  _contact.onAccepted(function(contact) { 
@@ -112,15 +112,18 @@ class AWSCCPComponent extends Component {
             //     console.log(contact)
             //  });
             
-            //  _contact.onMissed(function(contact) { 
-            //     console.log("Contact missed");
-            //     console.log(contact)
-            //  });
+                _contact.onMissed(function(contact) { 
+                   console.log("Contact missed");
+                   console.log(contact);
+                   window.close();                   
+                });
             
-            //  _contact.onEnded(function(contact) { 
-            //     console.log("Contact ended");
-            //     console.log(contact)
-            //  });
+                _contact.onEnded(function(contact,openedWindow) { 
+                   console.log("Contact ended");
+                  console.log(contact);
+                 // openedWindow.close();
+                   window.close();                  
+               });
             
             //  _contact.onDestroy(function(contact) { 
             //     console.log("Contact destroyed");

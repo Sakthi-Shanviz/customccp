@@ -11,7 +11,7 @@ import StyledTableCell from "../styled-components/table-cell";
 
 const useStyles = makeStyles({
     table: {
-      minWidth: 650,
+      minWidth: 650,      
     },
   });
 

@@ -95,7 +95,8 @@ class AWSCCPComponent extends Component {
                 var ani = JSON.stringify(attributeMap["ani"]["value"]);                
                 console.log(caller_id);
                 console.log(ani);
-                // window.alert("Caller ID: " + caller_id + "\nani: " + ani);
+                console.log(attributeMap);                
+               
                 console.log(contact)
                 
              });
@@ -233,8 +234,8 @@ class AWSCCPComponent extends Component {
         this.initializeCCP();
         const query = new URLSearchParams();
         query.append("callerId", "caller_id");
-        query.append("ani", "ani");
-        window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=840,height=520,left=50,top=50");
+        query.append("ani","ani");
+        window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");
         
     }
 

@@ -37,7 +37,6 @@
     "prestart": "set HTTPS=true",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "aws s3 rm s3://ccpanel --recursive --profile=dx && aws s3 sync ./build s3://ccpanel --profile=dx",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

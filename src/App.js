@@ -36,7 +36,6 @@ class App extends Component{
             .then(({data}) => {
                 store.dispatch(setInstanceConfig(data.connect.instance));
                 store.dispatch(setAPIConfig(data.api));
-                store.dispatch(setAttributeTracing(data.attributeTracing));
                 store.dispatch(makeAppReady());
                 this.setState({
                     appReady: true

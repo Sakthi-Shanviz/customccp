@@ -1,20 +1,5 @@
 import { withStyles, Grid, Paper, Typography } from '@material-ui/core';
 
-// .container
-//     padding: 10px!important
-//     background-color: #f0f0f0
-//     height: 100%
-//     overflow-y: scroll
-
-//     .paper
-//         padding: 20px
-//     h5
-//         margin-bottom: 20px
-
-// .header
-//     display: flex
-//     justify-content: space-between
-
 const styles = () => ({
     containerPadding: {
         padding: '10px',

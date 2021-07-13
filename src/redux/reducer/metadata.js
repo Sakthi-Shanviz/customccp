@@ -17,10 +17,6 @@ const metadataReducer = (state = initialState.metadata, action) => {
         _state.appReady = true;
     }
 
-    if(action.type === MetadataActions.SET_ATTRIBUTE_TRACING) {
-        _state.attributeTracing = action.payload;
-    }
-
     return _state;
 
 }

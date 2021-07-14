@@ -10,7 +10,7 @@ class AppFooter extends Component {
         return(
             <Box className={styles.wrapper}>
                 <CopyrightOutlined fontSize="small" />
-                <Typography variant="subtitle2">Copyright Health Net</Typography>
+                <Typography variant="subtitle2">Copyright Health Net Federal Services</Typography>
             </Box>
         )
     }

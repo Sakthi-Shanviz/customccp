@@ -11,7 +11,9 @@ import styles from './aws-ccp.module.sass';
 
 class AWSCCPComponent extends Component {
 
+   
     constructor(props) {
+        
         super(props)
 
         this.ccpStateMessages = {
@@ -58,6 +60,7 @@ class AWSCCPComponent extends Component {
     }
 
     initializeCCP() {
+        var openedWindow;
         this.setState({
             ccpState: CCPStates.AUTHORIZING
         })
@@ -104,7 +107,7 @@ class AWSCCPComponent extends Component {
                 Object.entries(data).forEach(([name, value]) => {
                     query.append(name, value);
                 });
-                var openedWindow = window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");                
+                openedWindow = window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");                
              });
             
             //  _contact.onAccepted(function(contact) { 
@@ -115,14 +118,15 @@ class AWSCCPComponent extends Component {
                 _contact.onMissed(function(contact) { 
                    console.log("Contact missed");
                    console.log(contact);
-                   window.close();                   
+                  // window.close(); 
+                   openedWindow.close();                
                 });
             
-                _contact.onEnded(function(contact,openedWindow) { 
+                _contact.onEnded(function(contact) { 
                    console.log("Contact ended");
-                  console.log(contact);
-                 // openedWindow.close();
-                   window.close();                  
+                   console.log(contact);
+                  //window.close();
+                  openedWindow.close();                
                });
             
             //  _contact.onDestroy(function(contact) { 

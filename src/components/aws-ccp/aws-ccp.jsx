@@ -10,7 +10,6 @@ import { addContact } from '../../redux/action/contact';
 import styles from './aws-ccp.module.sass';
 
 class AWSCCPComponent extends Component {
-
    
     constructor(props) {
         
@@ -50,7 +49,7 @@ class AWSCCPComponent extends Component {
 
         this.containerRef = createRef();
 
-        this.initializeCCP  = this.initializeCCP.bind(this);
+        this.initializeCCP  = this.initializeCCP.bind(this, this.props.setAwsContactsData);
         this.handleAgentLogin = this.handleAgentLogin.bind(this);
         this.handleTermination = this.handleTermination.bind(this);
         this.openLoginPopup = this.openLoginPopup.bind(this);
@@ -59,8 +58,8 @@ class AWSCCPComponent extends Component {
         this.openLoginPopup = this.openLoginPopup.bind(this);
     }
 
-    initializeCCP() {
-        var openedWindow;
+    initializeCCP(setAwsContactsData) {
+        //var openedWindow;
         this.setState({
             ccpState: CCPStates.AUTHORIZING
         })
@@ -89,11 +88,26 @@ class AWSCCPComponent extends Component {
             //  _contact.onPending(function(contact) { 
             //     console.log("Contact pending");
             //  });
+
+                // _contact.onConnecting(function(contact) { 
+                //      console.log("Contact connecting");
+                //      const AWSContactAttributes = {};
+                //      var attributeMap = contact.getAttributes();
+                //      AWSContactAttributes.name = JSON.stringify(attributeMap["callerid"]["value"]);
+                //      AWSContactAttributes.phone = JSON.stringify(attributeMap["dnis"]["value"]);
+                //      AWSContactAttributes.ani = JSON.stringify(attributeMap["ani"]["value"]);
+                //      AWSContactAttributes.callbackMemo = JSON.stringify(attributeMap["callbackMemo"]["value"]);
+                //      AWSContactAttributes.hippaVerification = JSON.stringify(attributeMap["hippaVerification"]["value"]);
+                //      AWSContactAttributes.beneficiaryId = JSON.stringify(attributeMap["beneficiaryId"]["value"]);
+                //      window.alert("name: " + AWSContactAttributes.name + "\nphone #: " + AWSContactAttributes.phone + "\nCustomer's account #: " + AWSContactAttributes.ani);
+                //      console.log(AWSContactAttributes);
+                //      this.props.SetAWSContactAttributes(AWSContactAttributes);
+                // });
             
-             _contact.onConnecting(function(contact) { 
+             _contact.onConnecting(async function(contact) { 
                 console.log("Contact connecting");
                 console.log(`onConnected(${contact.getContactId()})`);
-                var attributeMap = contact.getAttributes();
+                var attributeMap = await contact.getAttributes();
                 const requireAttributes = ["callerId", "ani", "beneficiaryId", "dnis", "callbackMemo", "hippaVerification"];
                 const data = Object.values(attributeMap)
                     .filter((attr) => requireAttributes.indexOf(attr.name) != -1)
@@ -102,12 +116,14 @@ class AWSCCPComponent extends Component {
                         return attributes;
                     }, {});
 
+                    data["contactId"] = contact.getContactId();
                 console.log(data);
-                const query = new URLSearchParams();
-                Object.entries(data).forEach(([name, value]) => {
-                    query.append(name, value);
-                });
-                openedWindow = window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");                
+                setAwsContactsData(data);
+                // const query = new URLSearchParams();
+                // Object.entries(data).forEach(([name, value]) => {
+                //     query.append(name, value);
+                // });
+                // openedWindow = window.open("https://localhost:3000/#/view?" + query.toString(), "_blank","width=780,height=460,left=50,top=50");                
              });
             
             //  _contact.onAccepted(function(contact) { 
@@ -119,14 +135,14 @@ class AWSCCPComponent extends Component {
                    console.log("Contact missed");
                    console.log(contact);
                   // window.close(); 
-                   openedWindow.close();                
+                  // openedWindow.close();                
                 });
             
                 _contact.onEnded(function(contact) { 
                    console.log("Contact ended");
                    console.log(contact);
                   //window.close();
-                  openedWindow.close();                
+                 // openedWindow.close();                
                });
             
             //  _contact.onDestroy(function(contact) { 
